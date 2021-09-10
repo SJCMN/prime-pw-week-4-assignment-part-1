@@ -58,9 +58,9 @@ let lastItem = ['first', 'second', 'third', 'last']
 let emptyArray = []
 
 function getLast( array ) {
-  if ( array.length > 0 ){
-return array[array.length-1];
-} else if (array.length < 0) {
+  if ( array.length > 0 ){ // if the array contains items
+    return array[array.length-1]; // return length - 1 for the index of last item
+  } else if (array.length === 0) { // if the array is empty it will have length of 0
     return undefined;
   }
 }
@@ -71,9 +71,22 @@ console.log('An empty array is: ', getLast(emptyArray));
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
-function find( value, array ){
 
+let dinnerOptions = ['tacos', 'tortillas', 'salsa', 'guacamole']
+
+function find( value, array ){
+  for (let option of array) {
+    if ( value === option){
+      console.log(option);
+      return `Your choice of ${value} is available!`;
+    } else if ( value != option) {
+      return `Your choice of ${value} is unavailable, Please make another selection.`;
+    }
+  }
 }
+
+console.log(find('salsa', dinnerOptions));
+console.log(find('burrito', dinnerOptions));
 
 // ----------------------
 // Stretch Goals
