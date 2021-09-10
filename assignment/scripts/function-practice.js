@@ -22,24 +22,27 @@ function helloName( name ) {
 console.log(helloName('Jim'));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
-  // return firstNumber + secondNumber;
+function addNumbers( firstNumber, secondNumber ) {
+  return firstNumber + secondNumber;// return firstNumber + secondNumber;
 }
 
+console.log('The sum of 2 and 3 is: ', addNumbers(2,3));
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree( firstNumber, secondNumber, thirdNumber){
+  return firstNumber * secondNumber * thirdNumber;// return each paramater multiplied
 }
 
+console.log('The product of 2 * 3 * 4 is: ', multiplyThree(2,3,4) );
 
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
+  } else if (number <= 0){
+    return false;
   }
-    return;
 }
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
@@ -50,9 +53,20 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-function getLast( array ) {
 
+let lastItem = ['first', 'second', 'third', 'last']
+let emptyArray = []
+
+function getLast( array ) {
+  if ( array.length > 0 ){
+return array[array.length-1];
+} else if (array.length < 0) {
+    return undefined;
+  }
 }
+
+console.log('The last item in the array is: ', getLast(lastItem));
+console.log('An empty array is: ', getLast(emptyArray));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
