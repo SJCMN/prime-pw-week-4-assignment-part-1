@@ -113,18 +113,49 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+let numberArr = [1,2,3,4,5]
+
+function sumAll( array ) {
   let sum = 0
+  for (let i = 0; i < numberArr.length; i++) {
+    sum = array[i] + sum;
+  }
   // TODO: loop to add items
   return sum;
 }
+
+console.log(numberArr);
+console.log('Hers is the sum of this array: ' , sumAll(numberArr));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
 
+function allPositive( array ) {
+  let positiveArr = [];
+  for (const num of array) {
+    if (num % 2 === 0){
+    positiveArr.push(num);
+    }
+  } if (positiveArr.length === 0){
+    positiveArr = [];
+  }
+  return positiveArr;
+}
+
+console.log(numberArr);
+console.log('Here are all the positive numbers in the same array:' , allPositive(numberArr));
+
+let nonPositiveArr = [1,5,7,19];
+
+console.log(nonPositiveArr);
+console.log('The array above contains all negative numbers:' , allPositive(nonPositiveArr));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+function twoNumRemainder (num1, num2){
+    
+}
