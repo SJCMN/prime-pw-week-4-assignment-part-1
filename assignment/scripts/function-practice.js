@@ -74,19 +74,27 @@ console.log('An empty array is: ', getLast(emptyArray));
 
 let dinnerOptions = ['tacos', 'tortillas', 'salsa', 'guacamole']
 
-function find( value, array ){
-  for (let option of array) {
-    if ( value === option){
-      console.log(option);
-      return `Your choice of ${value} is available!`;
-    } else if ( value != option) {
-      return `Your choice of ${value} is unavailable, Please make another selection.`;
+function find( value, array ) {
+  for (const option of array) {
+    if (option === value) { // compare value to each item in the array
+    console.log(`Your choice of ${value} is available!`); // log the value argument provided when a match is found
+    return true;
     }
   }
-}
+  console.log(`Your choice of ${value} is unavailable, Please make another selection.`); // log the value when a match is not found
+  return false; // false statement must not be nested with the loop as an else if- when it is the function always returns the last statement
+};
 
-console.log(find('salsa', dinnerOptions));
+console.log(dinnerOptions);
+
+console.log(find('guacamole', dinnerOptions));
+
+console.log(find('tacos', dinnerOptions));
+
+console.log(find('tamales', dinnerOptions));
+
 console.log(find('burrito', dinnerOptions));
+
 
 // ----------------------
 // Stretch Goals
