@@ -156,6 +156,36 @@ console.log('The array above contains all negative numbers:' , allPositive(nonPo
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
 
-function twoNumRemainder (num1, num2){
-    
+
+//There is a single operator in JavaScript, capable of providing the remainder of a division operation.
+//Two numbers are passed as parameters. The first parameter divided by the second parameter will have a remainder, possibly zero.
+//Return that value.
+//https://edabit.com/challenge/Q2j5FTFtsk7PdzrQk
+
+function remainder (num1, num2){
+      return num1 % num2
 }
+
+console.log('The remainder of 1 divided by 3 is:',remainder(1,3));
+console.log('The remainder of 3 divided by 4 is:',remainder(3,4));
+console.log('The remainder of -9 divided by 45 is:',remainder(-9,45));
+console.log('The remainder of 5 divided by 5 is:',remainder(5,5));
+
+// Create a function that takes a number as an argument.
+// Add up all the numbers from 1 to the number you passed to the function.
+// For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+// https://edabit.com/challenge/4gzDuDkompAqujpRi
+
+
+function addUp ( num ){
+  let sum = 0;
+  for (let i = 1; i<=num; i++){
+    sum = i + sum;
+  }
+  return sum
+}
+
+console.log('The sum of the first 4 numbers is:',addUp(4));
+console.log('The sum of the first 13 numbers is:',addUp(13));
+console.log('The sum of the first 600 numbers is:',addUp(600));
+console.log('The sum of the first 499 numbers is:',addUp(499));
