@@ -102,8 +102,13 @@ console.log(find('burrito', dinnerOptions));
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
-}
+  let sepString = [...string[0]]; // spread string into array of letters
+  if (sepString[0] === letter){ // compare first letter of new array with letter argument
+    return true;
+  } else {
+  return false;
+  }
+ }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
